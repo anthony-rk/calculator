@@ -3,7 +3,7 @@
 }
 
 .header {
-    background-color: rgb(153, 153, 153);
+    background-color: rgba(153, 153, 153, .95);
     /* background-image: linear-gradient(gray, lightgray); */
     
     width: 500px;
