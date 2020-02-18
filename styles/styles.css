@@ -1,17 +1,36 @@
 .html-body {
-    background-color: blanchedalmond;
-    
-    /* background:url(../assets/lectureHall.jpeg);   */
+    background:url(../images/wood_desk.jpg);  
+}
 
+.header {
+    /* background-color: lightgrey; */
+    background-image: linear-gradient(gray, lightgray);
+    
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: solid 2px green;
 }
 
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
+    font-size: 42px;
+    color: white;
+    text-shadow: -1px 1px 0 rgb(206, 69, 69),
+                    1px 1px 0 rgb(206, 69, 69),
+                    1px -1px 0 rgb(206, 69, 69),
+                    -2px -2px 0 rgb(206, 69, 69);
+    /* text-shadow: -1px 1px 0 #000,
+                  1px 1px 0 #000,
+                  1px -1px 0 #000,
+                  -2px -2px 0 #000; */
 }
 
 a {
     font-style: italic;
+    font-size: 20px;
 }
 
 a:hover {
@@ -27,6 +46,7 @@ button:hover {
 .calculator-outline {
     border: solid gray;
     border-width: 4px;
+    background-color: black;
     width: 550px;
     margin: 0 auto;
 }
@@ -37,7 +57,8 @@ button:hover {
 }
 
 #calculator-input {
-    width: 210px;
+    /* width: 210px; */
+    width: 315px;
     height: 30px;
     text-align: right;
     font-size: larger;
@@ -55,8 +76,8 @@ button:hover {
 .calculator-keys-container {
     text-align: center;
 }
+
 .calculator-keys {
-    /* background-color: lightgray; */
     background-color: rgb(206, 69, 69);
     font-size: larger;
     width: 100;
@@ -64,6 +85,7 @@ button:hover {
     margin-top: 8px;
     margin-left: 2px;
     margin-right: 2px;
+    border-radius: 15px;
 }
 
 .operator-keys {
@@ -74,9 +96,11 @@ button:hover {
     margin-top: 8px;
     margin-left: 2px;
     margin-right: 2px;
+    border-radius: 5px;
 }
 
 #key-EQUALS {
     width: 208;
     background-color: green;
+    border-radius: 15px;
 }
