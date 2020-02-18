@@ -42,7 +42,15 @@ let switchNegative = function() {
         strHistory += str;
     }
     else {
-        str = "-" + str;
+        if (firstNum == undefined) {
+            str = "-";
+            firstNum = str;
+        } else if (firstNum != undefined && operatorInput != undefined && secondNum == undefined) {
+            str = '-';
+            secondNum = str;
+        } else {
+            str = "-" + str;    
+        }
         strHistory = strHistory.substring(0, strHistory.length - (str.length - 1)); // new
         strHistory += str;
     }
@@ -178,7 +186,7 @@ document.getElementById("key-.").addEventListener("click", function() {addDecima
 
 document.getElementById("key-+-").addEventListener("click", function() {
     switchNegative();
-    negativeFlag = flipSign(negativeFlag);
+    // negativeFlag = flipSign(negativeFlag);
 });
 
 // Define functions for basic mathmatical operations
