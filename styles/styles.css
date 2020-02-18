@@ -1,24 +1,39 @@
 .html-body {
-    background-color: powderblue;
+    background-color: blanchedalmond;
+    
+    /* background:url(../assets/lectureHall.jpeg);   */
+
 }
 
 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
 }
 
 a {
     font-style: italic;
 }
 
+a:hover {
+    color: green;
+}
+
+button:hover {
+    /* background-color: yellow; */
+    opacity: 0.9;
+    color: whitesmoke;
+}
+
 .calculator-outline {
     border: solid gray;
     border-width: 4px;
-    width: 450px;
+    width: 550px;
     margin: 0 auto;
 }
 
 .input-box {
     text-align: center;
+    
 }
 
 #calculator-input {
@@ -26,21 +41,23 @@ a {
     height: 30px;
     text-align: right;
     font-size: larger;
+    background-color: lightgray;
 }
 
 #calculator-input-history {
     width: 210px;
-    height: 25px;
+    height: 30px;
     text-align: right;
     font-size: larger;
+    background-color: lightgray;
 }
-
 
 .calculator-keys-container {
     text-align: center;
 }
 .calculator-keys {
-    background-color: lightgray;
+    /* background-color: lightgray; */
+    background-color: rgb(206, 69, 69);
     font-size: larger;
     width: 100;
     height: 100;
@@ -57,4 +74,9 @@ a {
     margin-top: 8px;
     margin-left: 2px;
     margin-right: 2px;
+}
+
+#key-EQUALS {
+    width: 208;
+    background-color: green;
 }

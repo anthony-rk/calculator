@@ -6,36 +6,40 @@
     </head>
     </head>
     <body class="html-body">
-        <center><h1>Calculator App</h1></center>
+        <center><h1>The Simple Calculator</h1></center>
         <center><a href="https://github.com/anthony-rk/calculator">https://github.com/anthony-rk/calculator</a></center>
         <br>
         <div class="calculator-outline">
             <div class="input-box">
                 <form action="scripts/main.js"></form>
-                    <input type="text" id="calculator-input-history" value=''>
+                    <input type="text" id="calculator-input-history" name="history" value=''>
                 <form action="scripts/main.js"></form>
-                    <input type="text" id="calculator-input" value='0'>
+                    <input type="text" id="calculator-input" name="output" value='0'>
             </div>
             <div class="calculator-keys-container">
                 <button class="calculator-keys" id="key-7">7</button>
                 <button class="calculator-keys" id="key-8">8</button>
                 <button class="calculator-keys" id="key-9">9</button>
-                <button class="operator-keys" id="key-/">/</button>
+                <button class="operator-keys" id="key-CLEAR">CLEAR</button>
+                <button class="operator-keys" id="key-BACKSPACE">DEL</button>
                 <br>
                 <button class="calculator-keys" id="key-4">4</button>
                 <button class="calculator-keys" id="key-5">5</button>
                 <button class="calculator-keys" id="key-6">6</button>
                 <button class="operator-keys" id="key-*">*</button>
+                <button class="operator-keys" id="key-+">+</button>
                 <br>
                 <button class="calculator-keys" id="key-1">1</button>
                 <button class="calculator-keys" id="key-2">2</button>
                 <button class="calculator-keys" id="key-3">3</button>
+                <button class="operator-keys" id="key-/">/</button>
                 <button class="operator-keys" id="key--">-</button>
                 <br>
-                <button class="operator-keys" id="key-CLEAR">CLEAR</button>
+                <button class="operator-keys" id="key-.">.</button>
                 <button class="calculator-keys" id="key-0">0</button>
-                <button class="operator-keys" id="key-=">=</button>
-                <button class="operator-keys" id="key-+">+</button>
+                <button class="operator-keys" id="key-+-">+ / -</button>
+                <button class="operator-keys" id="key-EQUALS">=</button>
+                
             </div>
             <br>
         </div>

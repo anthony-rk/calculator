@@ -1,26 +1,11 @@
-// Define functions for basic mathmatical operations
-let add = function(a, b) {
-	return a + b;
+let negativeFlag = 1;
+
+let flipSign = function(input) {
+    return input *= -1;
 };
 
-let subtract = function(a, b) {
-	return a - b;
-};
-
-let divide = function(a, b) {
-	return a / b;
-};
-
-let multiply = function(a, b) {
-	return a * b;
-};
-
-let isInt = function(a) {
-    return a % 1 == 0;
-};
-
-let operate = function(num1, num2, operatorFN) {
-    return operatorFN(num1, num2);
+let operate = function(num1, num2, operatorFN, negativeFlag) {
+    return negativeFlag * operatorFN(num1, num2);
 };
 
 let clearInput = function() {
@@ -29,6 +14,52 @@ let clearInput = function() {
     firstNum = undefined;
     secondNum = undefined;
     operatorInput = undefined;
+};
+
+let backspaceInput = function() {
+    // get what is in the current display, remove the right most digit each time DEL button pushed
+    let newResult = document.getElementById("calculator-input").value;
+    newResult = newResult.substring(0, newResult.length - 1);
+    document.getElementById("calculator-input").value = newResult;
+    if (secondNum == undefined) {
+        firstNum = newResult;
+    } else {
+        secondNum = newResult;
+    }
+    // get what is in the current History display, remove the right most digit each time DEL button pushed
+    let newHistoryResult = document.getElementById("calculator-input-history").value;
+    newHistoryResult = newHistoryResult.substring(0, newHistoryResult.length - 1);
+    document.getElementById("calculator-input-history").value = newHistoryResult;
+};
+
+let switchNegative = function() {
+    let str = document.getElementById("calculator-input").value;
+    if (str.includes("-")) {
+        str = str.substring(1, str.length);
+    }
+    else {
+        str = "-" + str;
+    }
+    document.getElementById("calculator-input").value = str;
+};
+
+let addDecimal = function() {
+    let decimalResult = document.getElementById("calculator-input").value;
+    if (decimalResult.includes(".") === true) {
+        // Do nothing
+    } else {
+        decimalResult += ".";
+        document.getElementById("calculator-input").value = decimalResult;
+        document.getElementById("calculator-input-history").value += ".";
+        // Need to accurately update either firstNum or secondNum here
+        if (operatorInput == undefined && secondNum == undefined) {
+            firstNum = decimalResult; 
+            // document.getElementById("calculator-input-history").value = decimalResult;
+        } else {
+            secondNum = decimalResult;
+        }
+        // document.getElementById("calculator-input-history").value = decimalResult;
+    }
 };
 
 function displayNumValue(input) {
@@ -66,7 +97,7 @@ function calculateResult() {
     if (firstNum != undefined && secondNum != undefined && operatorInput != undefined) {
         // Can replace all this with the code below:
         // displayNumValue(operate(+firstNum, +secondNum, operatorInput));
-        newResult = operate(+firstNum, +secondNum, operatorInput);
+        newResult = operate(+firstNum, +secondNum, operatorInput, negativeFlag);
         if (isInt(newResult) == true) {
             displayNumValue(newResult);
         } else {
@@ -77,6 +108,7 @@ function calculateResult() {
         firstNum = undefined;
         secondNum = undefined;
         operatorInput = undefined;
+        negativeFlag = 1;
     }
 };
 
@@ -133,29 +165,40 @@ document.getElementById("key-+").addEventListener("click", function() {
 });
 
 document.getElementById("key-CLEAR").addEventListener("click", function() {clearInput()});
-document.getElementById("key-=").addEventListener("click", function() {calculateResult()});
+document.getElementById("key-EQUALS").addEventListener("click", function() {calculateResult()});
+document.getElementById("key-BACKSPACE").addEventListener("click", function() {backspaceInput()});
+document.getElementById("key-.").addEventListener("click", function() {addDecimal()});
 
+document.getElementById("key-+-").addEventListener("click", function() {
+    switchNegative();
+    negativeFlag = flipSign(negativeFlag);
+});
 
-// EXTRA OPERATOR FUNCTIONS
-// function multiply(multArray) {
-// 	let multResult = multArray[0]; 
-// 	for (let i = 1; i < multArray.length; i++) {
-// 		multResult *= multArray[i];
-// 	}
-// 	return multResult;
-// };
+// Define functions for basic mathmatical operations
+let add = function(a, b) {
+	return a + b;
+};
+let subtract = function(a, b) {
+	return a - b;
+};
+let divide = function(a, b) {
+	return a / b;
+};
+let multiply = function(a, b) {
+	return a * b;
+};
+let isInt = function(a) {
+    return a % 1 == 0;
+};
 
-// function sum(sumArray) {
-// 	return sumArray.reduce((a, b) => a + b, 0);
-// };
-	
+// EXTRA OPERATOR FUNCTIONS	
 // function power(a, b) {
 // 	return a ** b;
 // };
-
+//
 // function factorial(input) {
 // 	let sum = 0;
-
+//
 // 	if (input == 0 || input == 1) {
 // 		return 1;
 // 	} else {
