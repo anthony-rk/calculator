@@ -3,14 +3,14 @@
 }
 
 .header {
-    /* background-color: lightgrey; */
-    background-image: linear-gradient(gray, lightgray);
+    background-color: rgb(153, 153, 153);
+    /* background-image: linear-gradient(gray, lightgray); */
     
     width: 500px;
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 20px;
-    border: solid 2px green;
+    border: solid 2px black;
 }
 
 h1 {
@@ -18,14 +18,14 @@ h1 {
     font-style: italic;
     font-size: 42px;
     color: white;
-    text-shadow: -1px 1px 0 rgb(206, 69, 69),
+    /* text-shadow: -1px 1px 0 rgb(206, 69, 69),
                     1px 1px 0 rgb(206, 69, 69),
                     1px -1px 0 rgb(206, 69, 69),
-                    -2px -2px 0 rgb(206, 69, 69);
-    /* text-shadow: -1px 1px 0 #000,
-                  1px 1px 0 #000,
-                  1px -1px 0 #000,
-                  -2px -2px 0 #000; */
+                    -2px -2px 0 rgb(206, 69, 69); */
+    text-shadow: -1px 1px 0 #111,
+                  1px 1px 0 #111,
+                  1px -1px 0 #111,
+                  -2px -2px 0 #111;
 }
 
 a {
@@ -43,10 +43,18 @@ button:hover {
     color: whitesmoke;
 }
 
+button:active {
+    /* background-color: yellow; */
+    opacity: 0.9;
+    color: black;
+}
+
 .calculator-outline {
     border: solid gray;
     border-width: 4px;
-    background-color: black;
+    background-color: rgba(0,0,0,0.55);
+    /* background-color: black; */
+    
     width: 550px;
     margin: 0 auto;
 }

@@ -34,12 +34,19 @@ let backspaceInput = function() {
 
 let switchNegative = function() {
     let str = document.getElementById("calculator-input").value;
+    let strHistory = document.getElementById("calculator-input-history").value; // new
     if (str.includes("-")) {
         str = str.substring(1, str.length);
+        // remove the - from the history box
+        strHistory = strHistory.substring(0, strHistory.length - (str.length + 1));
+        strHistory += str;
     }
     else {
         str = "-" + str;
+        strHistory = strHistory.substring(0, strHistory.length - (str.length - 1)); // new
+        strHistory += str;
     }
+    document.getElementById("calculator-input-history").value = strHistory;
     document.getElementById("calculator-input").value = str;
 };
 
