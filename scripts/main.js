@@ -45,9 +45,15 @@ let switchNegative = function() {
         if (firstNum == undefined) {
             str = "-";
             firstNum = str;
+        } else if (firstNum != undefined && secondNum == undefined) {
+            firstNum = '-' + str;
+            str = firstNum;
         } else if (firstNum != undefined && operatorInput != undefined && secondNum == undefined) {
             str = '-';
             secondNum = str;
+        } else if (secondNum != undefined) {
+            secondNum = '-' + str;
+            str = secondNum;
         } else {
             str = "-" + str;    
         }
